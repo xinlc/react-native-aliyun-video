@@ -134,12 +134,41 @@ android {
             }
         }
     }
+
+    sourceSets.main {
+        jni.srcDirs = []
+        jniLibs.srcDir "libs"
+    }
+}
+
+repositories{
+    flatDir{
+        dirs 'libs'
+    }
 }
 
 dependencies {
     compile fileTree(dir: "libs", include: ["*.jar"])
-    compile "com.android.support:appcompat-v7:23.0.1"
+//    compile "com.android.support:appcompat-v7:23.0.1"
     compile "com.facebook.react:react-native:+"  // From node_modules
+
+    compile(name: 'QuSdk-RC', ext: 'aar')
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:design:24.2.1'
+    compile 'com.google.code.findbugs:jsr305:3.0.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'pub.devrel:easypermissions:0.2.1'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
+    compile 'com.squareup.okio:okio:1.12.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+
+    compile(name: 'AlivcPlayer-3.4.5', ext: 'aar')
+    compile(name: 'AlivcReporter-1.1', ext: 'aar')
+    compile(name: 'AliyunVodPlayer-3.4.5', ext: 'aar')
+
+    compile 'com.aliyun.dpa:oss-android-sdk:+'
+
 }
 
 // Run this once to be able to run the application with BUCK
