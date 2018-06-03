@@ -1,0 +1,44 @@
+{
+  "name": "react-native-short-video",
+  "version": "0.0.1",
+  "description": "A Short video for react native",
+  "main": "src/index.js",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "repository": {
+    "url": "git@github.com:xinlc/react-native-short-video.git",
+    "type": "git"
+  },
+  "keywords": [
+    "short-video",
+    "react-native-short-video",
+    "react-native",
+    "react-component"
+  ],
+  "author": "Leo Xin <xinlichao2016@gmail.com> (https://github.com/xinlc)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xinlc/react-native-short-video/issues"
+  },
+  "homepage": "https://github.com/xinlc/react-native-short-video",
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  },
+  "devDependencies": {
+    "babel-jest": "23.0.1",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "23.1.0",
+    "react-test-renderer": "16.3.1",
+    "react": "16.3.1",
+    "react-native": "0.55.4"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

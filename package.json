@@ -1,5 +1,14 @@
 {
-	"devDependencies": {
-		"lerna": "^2.11.0"
-	}
+ "devDependencies": {
+  "lerna": "^2.11.0",
+  "babel-eslint": "^7.2.3",
+  "eslint": "^3.9.1",
+  "eslint-config-airbnb": "^13.0.0",
+  "eslint-plugin-import": "^2.7.0",
+  "eslint-plugin-jsx-a11y": "^2.2.3",
+  "eslint-plugin-react": "^6.6.0",
+  "flow": "^0.2.3",
+  "flow-bin": "^0.49.1",
+  "flow-typed": "^2.1.2"
+ }
 }
