@@ -1,9 +1,13 @@
 {
-  "name": "react-native-short-video",
+  "name": "react-native-short-video-example",
   "version": "0.1.0",
-  "description": "A Short video for react native",
+  "description": "",
   "main": "src/index.js",
   "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
   "repository": {
     "url": "git@github.com:xinlc/react-native-short-video.git",
     "type": "git"
@@ -23,14 +27,19 @@
   "files": [
     "src"
   ],
-  "peerDependencies": {
-    "prop-types": "*",
-    "react": "*",
-    "react-native": "*"
+  "dependencies": {
+    "prop-types": "^15.5.10",
+    "react-native-short-video": "file:../ShortVideo"
   },
   "devDependencies": {
-    "prop-types": "^15.5.10",
+    "babel-jest": "23.0.1",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "23.1.0",
     "react": "16.3.1",
-    "react-native": "0.55.4"
+    "react-native": "0.55.4",
+    "react-test-renderer": "16.3.1"
+  },
+  "jest": {
+    "preset": "react-native"
   }
 }
