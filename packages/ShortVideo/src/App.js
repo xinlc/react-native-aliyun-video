@@ -22,13 +22,22 @@ export default class App extends Component<Props> {
 
   // 录制短视频
   onRecord = () => {
-    const path = RNShortVideo.recordShortVideo();
-    this.setState({ path });
+    RNShortVideo.recordShortVideo()
+      .then((path) => {
+        this.setState({ path });
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   onUpload = () => {
     // 通过STS 获取token
-    const uptoken = {}; // TODO: fetch token
+    const uptoken = null; // TODO: fetch token
+    if (!uptoken) {
+      alert('请先通过STS获取TOKEN');
+      return;
+    }
 
     // upload video
     RNShortVideo.uploadVideo({
@@ -61,14 +70,23 @@ export default class App extends Component<Props> {
           title="上传短视频"
           color="#841584"
         />
-
-
+        <View style={{ height: 20 }} />
         {
           this.state.videoId ? (
             <VideoView
               fullscreen
               source={{ vid: this.state.videoId }}
               poster={this.state.vedioUrl}
+            />
+          ) : null
+        }
+        <View style={{ height: 20 }} />
+        {
+          this.state.path ? (
+            <VideoView
+              fullscreen
+              source={{ url: this.state.path }}
+              poster="http://lorempixel.com/300/300/"
             />
           ) : null
         }

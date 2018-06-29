@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {
   requireNativeComponent,
   Modal,
+  Text,
   View,
   Image,
   StyleSheet,
@@ -54,17 +55,24 @@ class Video extends Component {
     };
   }
 
-  async start(vid) { // eslint-disable-line
+  async start(vid, akid, aks, token) { // eslint-disable-line
     console.log('start video');
-    const { source } = this.props;
-    const { akid, aks, token } = await this._fetchToken();
-    const state = { playing: true, akid, aks, token };
-    if (vid) {
-      state.vid = vid;
-    } else if (source && source.url) {
-      state.localUrl = source.url;
-    } else if (source && source.vid) {
-      state.vid = source.vid;
+    const { source = {} } = this.props;
+    let state = { playing: true, };
+    if (source.vid) {
+      // const { akid, aks, token } = await this._fetchToken();
+      state = {
+        ...state,
+        vid: source.vid,
+        akid,
+        aks,
+        token,
+      };
+    } else if (source.url) {
+      state = {
+        ...state,
+        localUrl: source.url,
+      };
     }
     if (!this._prepared) {
       state.loading = true;
