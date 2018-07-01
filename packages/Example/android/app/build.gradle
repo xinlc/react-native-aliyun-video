@@ -148,12 +148,12 @@ android {
 
 repositories{
     flatDir{
-        dirs "libs", "$rootDir/../node_modules/react-native-short-video/android/libs"
+        dirs "libs", "$rootDir/../node_modules/react-native-aliyun-short-video/android/libs"
     }
 }
 
 dependencies {
-    compile project(':react-native-short-video')
+    compile project(':react-native-aliyun-short-video')
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:23.0.1"
     compile "com.facebook.react:react-native:+"  // From node_modules

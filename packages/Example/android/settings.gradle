@@ -1,5 +1,5 @@
 rootProject.name = 'ShortVideo'
-include ':react-native-short-video'
-project(':react-native-short-video').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-short-video/android')
+include ':react-native-aliyun-short-video'
+project(':react-native-aliyun-short-video').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-aliyun-short-video/android')
 
 include ':app'
