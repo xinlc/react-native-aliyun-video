@@ -1,11 +1,10 @@
 {
-  "name": "react-native-short-video",
-  "version": "0.1.0",
+  "name": "react-native-aliyun-short-video",
+  "version": "0.1.1",
   "description": "A Short video for react native",
   "main": "src/index.js",
-  "private": true,
   "repository": {
-    "url": "git@github.com:xinlc/react-native-short-video.git",
+    "url": "git@github.com:xinlc/react-native-aliyun-video.git",
     "type": "git"
   },
   "keywords": [
@@ -17,9 +16,9 @@
   "author": "Leo Xin <xinlichao2016@gmail.com> (https://github.com/xinlc)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xinlc/react-native-short-video/issues"
+    "url": "https://github.com/xinlc/react-native-aliyun-video/issues"
   },
-  "homepage": "https://github.com/xinlc/react-native-short-video",
+  "homepage": "https://github.com/xinlc/react-native-aliyun-video",
   "files": [
     "src"
   ],
