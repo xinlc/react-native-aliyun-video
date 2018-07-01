@@ -1,6 +1,0 @@
-framework module AliyunVideoSDK {
-  umbrella header "AliyunVideoSDK.h"
-
-  export *
-  module * { export * }
-}
