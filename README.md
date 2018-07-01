@@ -1,7 +1,6 @@
 # react-native-aliyun-video 
 
 [![npm package](https://img.shields.io/npm/v/react-native-aliyun-short-video.svg?style=flat-square)](https://www.npmjs.org/package/react-native-aliyun-short-video)
-
 [![npm downloads](https://img.shields.io/npm/dt/react-native-aliyun-short-video.svg)](https://www.npmjs.com/package/react-native-aliyun-short-video)
 
 ![](/doc/android.gif)
