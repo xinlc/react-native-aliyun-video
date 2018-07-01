@@ -146,7 +146,7 @@ android {
     }
 }
 
-repositories{
+repositories {
     flatDir{
         dirs "libs", "$rootDir/../node_modules/react-native-aliyun-short-video/android/libs"
     }

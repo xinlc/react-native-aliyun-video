@@ -1,7 +1,10 @@
 # react-native-aliyun-video 
 
 [![npm package](https://img.shields.io/npm/v/react-native-aliyun-short-video.svg?style=flat-square)](https://www.npmjs.org/package/react-native-aliyun-short-video)
+
 [![npm downloads](https://img.shields.io/npm/dt/react-native-aliyun-short-video.svg)](https://www.npmjs.com/package/react-native-aliyun-short-video)
+
+![](/doc/android.gif)
 
 ## TOC
 
@@ -9,6 +12,7 @@
 * [Linking](#linking)
 * [Usage](#usage)
 * [API](#api)
+* [Troubleshooting](#troubleshooting)
 
 ## Installation
 
@@ -146,3 +150,47 @@ onRecord = () => {
 
 ## API
 [android short video](https://help.aliyun.com/document_detail/53421.html)
+
+## Troubleshooting
+
+When installing or using `react-native-aliyun-short-video`, you may encounter the following problems:
+
+<details>
+  <summary>[android] - Duplicate files copied in APK lib/armeabi-v7a/libgnustl_shared.so</summary>
+
+* in `android/app/build.gradle`:
+
+```diff
+android {
+  ...
+  packagingOptions {
+    exclude('META-INF/LICENSE')
++    pickFirst "**/libgnustl_shared.so"
+  }
+  ...
+}
+```
+
+</details>
+
+<details>
+  <summary>[android] - Could not find `:QuSdk-RC:`...</summary>
+
+* in `android/app/build.gradle`:
+
+```diff
+...
+repositories {
+  flatDir {
+-   dirs "libs"
++   dirs "libs", "$rootDir/../node_modules/react-native-aliyun-short-video/android/libs"
+  }
+}
+...
+```
+
+</details>
+
+## TODO
+
+* [ ] Compatible with iOS
