@@ -35,6 +35,24 @@
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* ShortVideoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ShortVideoTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
+		4106023F20EF1B3300D74470 /* RNShortVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4106023E20EF1B2B00D74470 /* RNShortVideo.framework */; };
+		410602D520EF5B7500D74470 /* AliyunLanguageSource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 41B973B220EF0EF80062F323 /* AliyunLanguageSource.bundle */; };
+		410602D720EF5B8900D74470 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 410602D620EF5B8800D74470 /* AlipaySDK.bundle */; };
+		410602DB20EF623C00D74470 /* QPSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 410602DA20EF623B00D74470 /* QPSDK.bundle */; };
+		4193EABB20EE2B7000CAFDA8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4193EABA20EE2B6F00CAFDA8 /* libz.tbd */; };
+		4193EABD20EE2B7C00CAFDA8 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4193EABC20EE2B7C00CAFDA8 /* libc++.tbd */; };
+		4193EABF20EE2B8300CAFDA8 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4193EABE20EE2B8300CAFDA8 /* libiconv.tbd */; };
+		4193EAC120EE2B8900CAFDA8 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4193EAC020EE2B8900CAFDA8 /* libresolv.tbd */; };
+		41B973B320EF0EF80062F323 /* AliyunPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973AB20EF0EF60062F323 /* AliyunPlayerSDK.framework */; };
+		41B973B420EF0EF80062F323 /* AliyunPlayerSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973AB20EF0EF60062F323 /* AliyunPlayerSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		41B973B520EF0EF80062F323 /* QuCore-ThirdParty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973AC20EF0EF70062F323 /* QuCore-ThirdParty.framework */; };
+		41B973B620EF0EF80062F323 /* QuCore-ThirdParty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973AC20EF0EF70062F323 /* QuCore-ThirdParty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		41B973B720EF0EF80062F323 /* AliyunVideoSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973AD20EF0EF70062F323 /* AliyunVideoSDK.framework */; };
+		41B973B820EF0EF80062F323 /* AliyunVideoSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973AD20EF0EF70062F323 /* AliyunVideoSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		41B973BB20EF0EF80062F323 /* AliyunVodPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973AF20EF0EF70062F323 /* AliyunVodPlayerSDK.framework */; };
+		41B973BC20EF0EF80062F323 /* AliyunVodPlayerSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973AF20EF0EF70062F323 /* AliyunVodPlayerSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		41B973BD20EF0EF80062F323 /* AliThirdparty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973B020EF0EF80062F323 /* AliThirdparty.framework */; };
+		41B973BE20EF0EF80062F323 /* AliThirdparty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973B020EF0EF80062F323 /* AliThirdparty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
@@ -279,6 +297,13 @@
 			remoteGlobalIDString = 3D3CD9181DE5FBD800167DC4;
 			remoteInfo = "jschelpers-tvOS";
 		};
+		4106023D20EF1B2B00D74470 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4106023920EF1B2A00D74470 /* RNShortVideo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4193E87F20EE033D00CAFDA8;
+			remoteInfo = RNShortVideo;
+		};
 		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
@@ -316,6 +341,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4193E94D20EE142F00CAFDA8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				41B973BE20EF0EF80062F323 /* AliThirdparty.framework in Embed Frameworks */,
+				41B973B820EF0EF80062F323 /* AliyunVideoSDK.framework in Embed Frameworks */,
+				41B973B620EF0EF80062F323 /* QuCore-ThirdParty.framework in Embed Frameworks */,
+				41B973B420EF0EF80062F323 /* AliyunPlayerSDK.framework in Embed Frameworks */,
+				41B973BC20EF0EF80062F323 /* AliyunVodPlayerSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
@@ -339,7 +382,23 @@
 		2D02E47B1E0B4A5D006451C7 /* ShortVideo-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ShortVideo-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* ShortVideo-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ShortVideo-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4106023920EF1B2A00D74470 /* RNShortVideo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNShortVideo.xcodeproj; path = ../../ShortVideo/ios/RNShortVideo.xcodeproj; sourceTree = "<group>"; };
+		410602D620EF5B8800D74470 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AlipaySDK.bundle; path = ../../ShortVideo/ios/AliyunSDK/AlipaySDK.bundle; sourceTree = "<group>"; };
+		410602DA20EF623B00D74470 /* QPSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = QPSDK.bundle; path = ../../ShortVideo/ios/AliyunSDK/QPSDK.bundle; sourceTree = "<group>"; };
+		4193EABA20EE2B6F00CAFDA8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		4193EABC20EE2B7C00CAFDA8 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		4193EABE20EE2B8300CAFDA8 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		4193EAC020EE2B8900CAFDA8 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		41B973AB20EF0EF60062F323 /* AliyunPlayerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AliyunPlayerSDK.framework; path = ../../ShortVideo/ios/AliyunSDK/AliyunPlayerSDK.framework; sourceTree = "<group>"; };
+		41B973AC20EF0EF70062F323 /* QuCore-ThirdParty.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "QuCore-ThirdParty.framework"; path = "../../ShortVideo/ios/AliyunSDK/QuCore-ThirdParty.framework"; sourceTree = "<group>"; };
+		41B973AD20EF0EF70062F323 /* AliyunVideoSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AliyunVideoSDK.framework; path = ../../ShortVideo/ios/AliyunSDK/AliyunVideoSDK.framework; sourceTree = "<group>"; };
+		41B973AE20EF0EF70062F323 /* VODUpload.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VODUpload.framework; path = ../../ShortVideo/ios/AliyunSDK/VODUpload.framework; sourceTree = "<group>"; };
+		41B973AF20EF0EF70062F323 /* AliyunVodPlayerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AliyunVodPlayerSDK.framework; path = ../../ShortVideo/ios/AliyunSDK/AliyunVodPlayerSDK.framework; sourceTree = "<group>"; };
+		41B973B020EF0EF80062F323 /* AliThirdparty.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AliThirdparty.framework; path = ../../ShortVideo/ios/AliyunSDK/AliThirdparty.framework; sourceTree = "<group>"; };
+		41B973B120EF0EF80062F323 /* AliyunVideoCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AliyunVideoCore.framework; path = ../../ShortVideo/ios/AliyunSDK/AliyunVideoCore.framework; sourceTree = "<group>"; };
+		41B973B220EF0EF80062F323 /* AliyunLanguageSource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AliyunLanguageSource.bundle; path = ../../ShortVideo/ios/AliyunSDK/AliyunLanguageSource.bundle; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
+		72FBE723007341F28CA1DA53 /* RNShortVideo.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = RNShortVideo.framework; path = System/Library/Frameworks/RNShortVideo.framework; sourceTree = SDKROOT; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
@@ -358,18 +417,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4106023F20EF1B3300D74470 /* RNShortVideo.framework in Frameworks */,
+				4193EAC120EE2B8900CAFDA8 /* libresolv.tbd in Frameworks */,
+				4193EABF20EE2B8300CAFDA8 /* libiconv.tbd in Frameworks */,
+				4193EABD20EE2B7C00CAFDA8 /* libc++.tbd in Frameworks */,
+				4193EABB20EE2B7000CAFDA8 /* libz.tbd in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
+				41B973B720EF0EF80062F323 /* AliyunVideoSDK.framework in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
+				41B973BB20EF0EF80062F323 /* AliyunVodPlayerSDK.framework in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
+				41B973BD20EF0EF80062F323 /* AliThirdparty.framework in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
+				41B973B320EF0EF80062F323 /* AliyunPlayerSDK.framework in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
+				41B973B520EF0EF80062F323 /* QuCore-ThirdParty.framework in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,9 +588,29 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4193EAC020EE2B8900CAFDA8 /* libresolv.tbd */,
+				4193EABE20EE2B8300CAFDA8 /* libiconv.tbd */,
+				4193EABC20EE2B7C00CAFDA8 /* libc++.tbd */,
+				4193EABA20EE2B6F00CAFDA8 /* libz.tbd */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4106023A20EF1B2A00D74470 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4106023E20EF1B2B00D74470 /* RNShortVideo.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4193E91620EE136300CAFDA8 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				72FBE723007341F28CA1DA53 /* RNShortVideo.framework */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
@@ -545,6 +634,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				4106023920EF1B2A00D74470 /* RNShortVideo.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -573,11 +663,22 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				410602DA20EF623B00D74470 /* QPSDK.bundle */,
+				410602D620EF5B8800D74470 /* AlipaySDK.bundle */,
+				41B973B020EF0EF80062F323 /* AliThirdparty.framework */,
+				41B973B220EF0EF80062F323 /* AliyunLanguageSource.bundle */,
+				41B973AB20EF0EF60062F323 /* AliyunPlayerSDK.framework */,
+				41B973B120EF0EF80062F323 /* AliyunVideoCore.framework */,
+				41B973AD20EF0EF70062F323 /* AliyunVideoSDK.framework */,
+				41B973AF20EF0EF70062F323 /* AliyunVodPlayerSDK.framework */,
+				41B973AC20EF0EF70062F323 /* QuCore-ThirdParty.framework */,
+				41B973AE20EF0EF70062F323 /* VODUpload.framework */,
 				13B07FAE1A68108700A75B9A /* ShortVideo */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ShortVideoTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				4193E91620EE136300CAFDA8 /* Recovered References */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -633,6 +734,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				4193E94D20EE142F00CAFDA8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -685,12 +787,15 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 610;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = K6VEHMM9MJ;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -762,6 +867,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = 4106023A20EF1B2A00D74470 /* Products */;
+					ProjectRef = 4106023920EF1B2A00D74470 /* RNShortVideo.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -999,6 +1108,13 @@
 			remoteRef = 3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		4106023E20EF1B2B00D74470 /* RNShortVideo.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RNShortVideo.framework;
+			remoteRef = 4106023D20EF1B2B00D74470 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1048,6 +1164,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				410602DB20EF623C00D74470 /* QPSDK.bundle in Resources */,
+				410602D720EF5B8900D74470 /* AlipaySDK.bundle in Resources */,
+				410602D520EF5B7500D74470 /* AliyunLanguageSource.bundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
@@ -1172,9 +1291,17 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-aliyun-short-video/ios/RNShortVideo/**",
+				);
 				INFOPLIST_FILE = ShortVideoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1189,9 +1316,17 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-aliyun-short-video/ios/RNShortVideo/**",
+				);
 				INFOPLIST_FILE = ShortVideoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1204,9 +1339,23 @@
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = K6VEHMM9MJ;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-aliyun-short-video/ios/AliyunSDK",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-aliyun-short-video/ios/RNShortVideo/**",
+				);
 				INFOPLIST_FILE = ShortVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1215,6 +1364,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = ShortVideo;
+				VALID_ARCHS = "armv7 arm64 armv7s";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1222,8 +1372,22 @@
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K6VEHMM9MJ;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-aliyun-short-video/ios/AliyunSDK",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-aliyun-short-video/ios/RNShortVideo/**",
+				);
 				INFOPLIST_FILE = ShortVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1232,6 +1396,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = ShortVideo;
+				VALID_ARCHS = "armv7 arm64 armv7s";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -1248,8 +1413,16 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-aliyun-short-video/ios/RNShortVideo/**",
+				);
 				INFOPLIST_FILE = "ShortVideo-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1274,8 +1447,16 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-aliyun-short-video/ios/RNShortVideo/**",
+				);
 				INFOPLIST_FILE = "ShortVideo-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1299,8 +1480,16 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-aliyun-short-video/ios/RNShortVideo/**",
+				);
 				INFOPLIST_FILE = "ShortVideo-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1324,8 +1513,16 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-aliyun-short-video/ios/RNShortVideo/**",
+				);
 				INFOPLIST_FILE = "ShortVideo-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",

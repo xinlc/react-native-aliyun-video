@@ -85,7 +85,7 @@ export default class App extends Component<Props> {
             <VideoView
               fullscreen
               source={{ url: this.state.path }}
-              poster="http://t.cn/RuWRYzv?1=1"
+              poster="https://t.cn/RuWRYzv?1=1"
             />
           ) : null
         }
