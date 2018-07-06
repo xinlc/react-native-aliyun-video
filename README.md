@@ -112,6 +112,43 @@ include ':app'
 ```
 </details>
 
+<details>
+    <summary>iOS</summary>
+
+In XCode, in the project navigator:
+
+* Right click _Libraries_
+* Add Files to _[your project's name]_
+* Go to `node_modules/react-native-aliyun-short-video/ios`
+* Add the `RNShortVideo.xcodeproj` file
+* Drag and drop the `node_modules/react-native-aliyun-short-video/ios/AliyunSDK` folder to your xcode project. (Make sure Copy items if needed IS ticked)
+
+Click on project _General_ tab
+
+* Under _Embedded Binaries_ click `+` and add `AliThirdparty.framework`, `AliyunPlayerSDK.framework`, `AliyunVideoSDK.framework`, `AliyunVodPlayerSDK.framework`, `QuCore-ThirdParty.framework`
+* Under _Linked Frameworks and Libraries_ click `+` and add `RNShortVideo.framework`, `libz.tbd`, `libc++.tbd`, `libiconv.tbd`, `libresolv.tbd`, `ImageIO.framework`, `CoreMedia.framework`, `CoreVideo.framework`, `SystemConfiguration.framework`, `Photos.framework`, `OpenAL.framework`, `VideoToolbox.framework`
+
+Click on project _Build Settings_ tab
+
+* Look for _Enable Bitcode_ set to No
+* Look for _Other Linker Flags_ and make sure it contain `-ObjC`
+* Look for _Framework Search Paths_ and make sure it contain `$(SRCROOT)/../node_modules/react-native-aliyun-short-video/ios/AliyunSDK`
+* Look for _Header Search Paths_ and make sure it contain `$(SRCROOT)/../node_modules/react-native-aliyun-short-video/ios/RNShortVideo` (Mark as recursive)
+
+Click on project _Build Phase_ tab
+
+* Under _Copy Bundle Resources_ click `+` and add `QPSDK.bundle` and `AliyunLanguageSource.bundle`
+
+
+In the project navigator:
+
+* Click _Info.plist_
+* Add the `NSPhotoLibraryUsageDescription`, `NSMicrophoneUsageDescription`, `NSCameraUsageDescription` and `NSPhotoLibraryAddUsageDescription`keys to your `Info.plist` with strings describing why your app needs these permissions. **Note: You will get a SIGABRT crash if you don't complete this step**
+
+Run your project (Cmd+R) 
+
+</details>
+
 ## Usage
 See the [example](https://github.com/xinlc/react-native-aliyun-video/blob/master/packages/Example/src/App.js)
 
