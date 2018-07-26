@@ -1,6 +1,6 @@
 {
   "name": "react-native-aliyun-short-video",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A Short video for react native",
   "main": "src/index.js",
   "repository": {
@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/xinlc/react-native-aliyun-video",
   "files": [
-    "src"
+    "src",
+    "android",
+    "ios"
   ],
   "peerDependencies": {
     "prop-types": "*",
