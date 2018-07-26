@@ -231,4 +231,4 @@ repositories {
 
 ## TODO
 
-* [ ] Compatible with iOS
+* [x] Compatible with iOS
