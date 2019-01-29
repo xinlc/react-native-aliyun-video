@@ -1,6 +1,6 @@
 {
   "name": "react-native-aliyun-short-video",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A Short video for react native",
   "main": "src/index.js",
   "repository": {
