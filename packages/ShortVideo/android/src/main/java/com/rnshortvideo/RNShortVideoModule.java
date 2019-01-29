@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
+import android.support.annotation.Nullable;
 
 import com.alibaba.sdk.android.vod.upload.VODSVideoUploadCallback;
 import com.alibaba.sdk.android.vod.upload.VODSVideoUploadClient;

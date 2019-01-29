@@ -25,7 +25,8 @@
   
   [self aliPlayer];
   NSLog(@"UIView size %f:%f", self.frame.size.width, self.frame.size.height);
-  self.player.playerView.frame = CGRectMake(0, 0, PLS_SCREEN_WIDTH, PLS_SCREEN_WIDTH);
+// 在layoutSubviews设置frame
+//  self.player.playerView.frame = CGRectMake(0, 0, PLS_SCREEN_WIDTH, PLS_SCREEN_WIDTH);
   self.player.playerView.contentMode = UIViewContentModeScaleAspectFit;
   [self addSubview:self.player.playerView];
   
@@ -179,6 +180,13 @@
 }
 - (void)onCircleStartWithVodPlayer:(AliyunVodPlayer*)vodPlayer{
   //开启循环播放功能，开始循环播放时接收此事件。
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    NSLog(@"UIView size123 %f:%f", self.bounds.size.width, self.bounds.size.height);
+    self.player.playerView.frame = self.bounds;
 }
 
 @end

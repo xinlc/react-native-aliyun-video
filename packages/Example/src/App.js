@@ -9,7 +9,7 @@ import {
   View,
   Button,
 } from 'react-native';
-import RNShortVideo, { VideoView } from 'react-native-aliyun-short-video';
+import RNShortVideo, { VideoView, RCTVideoView, } from 'react-native-aliyun-short-video';
 
 type Props = {};
 export default class App extends Component<Props> {

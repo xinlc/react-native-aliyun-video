@@ -1,3 +1,3 @@
 
 export { default } from './Native/RNShortVideo';
-export { default as VideoView } from './Components/VideoView';
+export { default as VideoView, RCTVideoView } from './Components/VideoView';

@@ -35,6 +35,9 @@ class Video extends Component {
       url: '',       // local url
     },
     looping: true,
+    renderLoad: null,
+    renderPlay: null,
+    renderPoster: null,
   };
 
   constructor(props) {
@@ -137,12 +140,45 @@ class Video extends Component {
     }
   }
 
+  _renderLoad(loading) {
+    const { renderLoad } = this.props;
+    if (renderLoad) {
+      return renderLoad(loading);
+    }
+    if (loading) {
+      return (<Image style={Styles.loading} source={LOADING_IMG} />);
+    }
+    return null;
+  }
+
+  _renderPlay(playing) {
+    const { renderPlay } = this.props;
+    if (renderPlay) {
+      return renderPlay(playing);
+    }
+    if (!playing) {
+      return (<Text>播放</Text>);
+    }
+    return null;
+  }
+
+  _renderPoster(poster, playing) {
+    const { renderPoster } = this.props;
+    if (renderPoster) {
+      return renderPoster(playing);
+    }
+    if (poster !== '' && !playing) {
+      return (<Image style={Styles.poster} source={{ uri: poster }} />);
+    }
+    return null;
+  }
+
   _renderFullScreen() {
     const { contextStyle, looping, fullscreen, hide, poster } = this.props;
     const { loading, playing, vid, akid, aks, token, localUrl } = this.state;
     const fullScreenStyle = fullscreen && playing ? Styles.fullScreen : {};
     const nativeProps = Object.assign({}, {
-      style: [Styles.contextStyle, contextStyle, fullScreenStyle],
+      style: [Styles.contextStyle, fullScreenStyle, contextStyle],
       playing,
       looping,
       onVideoPrepared: this._onVideoPrepared,
@@ -161,10 +197,9 @@ class Video extends Component {
     // console.info('video full native props', nativeProps);
     return (
       <TouchableWithoutFeedback onPress={() => this._toggle()}>
-        <View style={[Styles.base, Styles.contextStyle, this.props.contextStyle, hideStyle]}>
-          {poster !== '' && !playing ? (<Image style={Styles.poster} source={{ uri: poster }} />) : null}
-          {/* {!playing ? (<Icon name={'play-circle-o'} style={Styles.icon} />) : null} */}
-          {!playing ? (<Text>播放</Text>) : null}
+        <View style={[Styles.base, Styles.contextStyle, contextStyle, hideStyle]}>
+          {this._renderPoster(poster, playing)}
+          {this._renderPlay(playing)}
           <Modal
             visible={this.state.playing}
             animationType={this.props.animationType}
@@ -178,9 +213,7 @@ class Video extends Component {
                 onStartShouldSetResponder={() => true}
                 onResponderGrant={() => this._onRequestClose()}
               />
-              {
-                loading ? (<Image style={Styles.loading} source={LOADING_IMG} />) : null
-              }
+              {this._renderLoad(loading)}
             </View>
           </Modal>
         </View>
@@ -216,18 +249,9 @@ class Video extends Component {
             {...nativeProps}
             playing={this.state.playing}
           />
-          {
-            poster !== '' && !playing ? (<Image style={Styles.poster} source={{ uri: poster }} />) : null
-          }
-          {/* {
-            !playing ? (<Icon name={'play-circle-o'} style={Styles.icon} />) : null
-          } */}
-          {
-            !playing ? (<Text>播放</Text>) : null
-          }
-          {
-            loading ? (<Image style={Styles.loading} source={LOADING_IMG} />) : null
-          }
+          {this._renderPoster(poster, playing)}
+          {this._renderPlay(playing)}
+          {this._renderLoad(loading)}
         </View>
       </TouchableWithoutFeedback>
     );
@@ -264,7 +288,7 @@ const Styles = StyleSheet.create({
   },
   fullScreen: {
     width: '100%',
-    height: 380,
+    height: '100%',
   },
   hide: {
     width: 0,
@@ -317,3 +341,4 @@ const VideoPlayerView = {
 const RCTVideoView = requireNativeComponent('RNVideoPlayerView', VideoPlayerView);
 
 export default Video;
+export { RCTVideoView };
