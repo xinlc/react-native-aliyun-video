@@ -34,48 +34,85 @@ typedef NS_OPTIONS(NSUInteger, DebugModuleOption) {
 
 @implementation AliyunRootViewController
 
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+        self.defaultOptions = @{
+                                @"size": @1,  // 0->360p，1:480p，2->540p，3->720p
+                                @"ratio": @0, // 0->1:1,1->3:4,2->9:16
+                                @"min": @2,
+                                @"max": @20,
+                                @"quality": @3, // 0->SSD, 1->HD, 2->SD, 3->LD, 4->PD, 5->EPD
+                                @"gop": @5 // 建议GOP值为5-30
+                                };
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.moduleOption = DebugModule;
-  
-    [self setupSDKBaseVersionUI];
-
     
-//    UIImageView *image = [[UIImageView alloc] initWithImage:[self imageNamed:@"root_bg"]];
-//    image.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
-//    [self.view addSubview:image];
-//    [self setupButtons];
-  
-  [[UIApplication sharedApplication] setStatusBarHidden:TRUE];
-  
-  AliyunVideoRecordParam *videoRecordParam = [[AliyunVideoRecordParam alloc] init];
-  videoRecordParam.ratio = AliyunVideoVideoRatio1To1;
-  videoRecordParam.size = AliyunVideoVideoSize360P;
-  videoRecordParam.minDuration = 2;
-  videoRecordParam.maxDuration = 30;
-  videoRecordParam.position = AliyunCameraPositionBack;
-  videoRecordParam.beautifyStatus = YES;
-  videoRecordParam.beautifyValue = 100;
-//  videoRecordParam.torchMode = AliyunCameraTorchModeOff;
-  
-  UIViewController *recordViewController = [[AliyunVideoBase shared] createRecordViewControllerWithRecordParam:videoRecordParam];
-  [AliyunVideoBase shared].delegate = (id)self;
-  [self.navigationController pushViewController:recordViewController animated:YES];
-  
-//  UIViewController *vc = [[AliyunMediator shared] recordModule];
-//  [vc setValue:self forKey:@"delegate"];
-//  [self.navigationController pushViewController:vc animated:YES];
-  
+    [self setupSDKBaseVersionUI];
+    
+    
+    //    UIImageView *image = [[UIImageView alloc] initWithImage:[self imageNamed:@"root_bg"]];
+    //    image.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+    //    [self.view addSubview:image];
+    //    [self setupButtons];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:TRUE];
+    
+    AliyunVideoRecordParam *videoRecordParam = [[AliyunVideoRecordParam alloc] init];
+    AliyunVideoSize size = [[self.options objectForKey:@"size"] intValue];
+    AliyunVideoQuality videoQuality = [[self.options objectForKey:@"quality"] intValue];
+    int gop = [[self.options objectForKey:@"gop"] intValue];
+    CGFloat min = [[self.options objectForKey:@"min"] floatValue];
+    CGFloat max = [[self.options objectForKey:@"max"] floatValue];
+    AliyunVideoRatio ratio = AliyunVideoVideoRatio1To1;
+    switch ([[self.options objectForKey:@"ratio"] intValue])
+    {
+        case 1:
+        {
+            ratio = AliyunVideoVideoRatio3To4;
+        } break;
+        case 2:
+        {
+            ratio = AliyunVideoVideoRatio9To16;
+        } break;
+    }
+    
+    videoRecordParam.ratio = ratio;
+    videoRecordParam.size = size;
+    videoRecordParam.minDuration = min;
+    videoRecordParam.maxDuration = max;
+    videoRecordParam.position = AliyunCameraPositionBack;
+    videoRecordParam.beautifyStatus = YES;
+    videoRecordParam.beautifyValue = 80;
+    videoRecordParam.videoQuality = videoQuality;
+    videoRecordParam.gop = gop;
+    //  videoRecordParam.torchMode = AliyunCameraTorchModeOff;
+    
+    UIViewController *recordViewController = [[AliyunVideoBase shared] createRecordViewControllerWithRecordParam:videoRecordParam];
+    [AliyunVideoBase shared].delegate = (id)self;
+    [self.navigationController pushViewController:recordViewController animated:YES];
+    
+    //  UIViewController *vc = [[AliyunMediator shared] recordModule];
+    //  [vc setValue:self forKey:@"delegate"];
+    //  [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 - (void)viewDidDisappear {
-  
+    
 }
 
 - (void)setupButtons
 {
-
+    
     CGFloat width = 360;
     CGFloat height = 480;
     
@@ -167,9 +204,9 @@ typedef NS_OPTIONS(NSUInteger, DebugModuleOption) {
     config.hiddenDeleteButton = NO;
     config.hiddenFinishButton = NO;
     config.recordOnePart = NO;
-//    config.filterArray = @[@"炽黄",@"粉桃",@"海蓝",@"红润",@"灰白",@"经典",@"麦茶",@"浓烈",@"柔柔",@"闪耀",@"鲜果",@"雪梨",@"阳光",@"优雅",@"朝阳",@"波普",@"光圈",@"海盐",@"黑白",@"胶片",@"焦黄",@"蓝调",@"迷糊",@"思念",@"素描",@"鱼眼",@"马赛克",@"模糊"];
+    //    config.filterArray = @[@"炽黄",@"粉桃",@"海蓝",@"红润",@"灰白",@"经典",@"麦茶",@"浓烈",@"柔柔",@"闪耀",@"鲜果",@"雪梨",@"阳光",@"优雅",@"朝阳",@"波普",@"光圈",@"海盐",@"黑白",@"胶片",@"焦黄",@"蓝调",@"迷糊",@"思念",@"素描",@"鱼眼",@"马赛克",@"模糊"];
     config.imageBundleName = @"QPSDK";
-//    config.filterBundleName = @"FilterResource";
+    //    config.filterBundleName = @"FilterResource";
     config.recordType = AliyunVideoRecordTypeCombination;
     config.showCameraButton = NO;
     
@@ -197,10 +234,10 @@ typedef NS_OPTIONS(NSUInteger, DebugModuleOption) {
 
 #pragma mark - tool
 - (UIImage *)imageNamed:(NSString *)name {
-
+    
     NSString *path = [NSString stringWithFormat:@"%@.bundle/%@",[AliyunVideoBase shared].videoUIConfig.imageBundleName,name];
     return [UIImage imageNamed:path];
-
+    
 }
 
 #pragma mark - action
@@ -231,23 +268,23 @@ typedef NS_OPTIONS(NSUInteger, DebugModuleOption) {
 }
 
 - (IBAction)buttonComponentClick:(id)sender {
-     UIViewController *vc = [[AliyunMediator shared] uiComponentModule];
+    UIViewController *vc = [[AliyunMediator shared] uiComponentModule];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - RecordParamViewControllerDelegate
 - (void)toRecordViewControllerWithMediaConfig:(id)config {
-
+    
     UIViewController *recordViewController = [[AliyunVideoBase shared] createRecordViewControllerWithRecordParam:(AliyunVideoRecordParam*)config];
     [AliyunVideoBase shared].delegate = (id)self;
     [self.navigationController pushViewController:recordViewController animated:YES];
-
+    
 }
 
 #pragma mark - ConfigureViewControllerdelegate
 - (void)configureDidFinishWithMedia:(AliyunMediaConfig *)mediaConfig {
     if (_isClipConfig) {
-
+        
         UIViewController *vc = [[AliyunMediator shared] cropModule];
         [vc setValue:mediaConfig forKey:@"cutInfo"];
         [vc setValue:self forKey:@"delegate"];
@@ -305,7 +342,7 @@ typedef NS_OPTIONS(NSUInteger, DebugModuleOption) {
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
-//        [[UIApplication sharedApplication] setStatusBarHidden:FALSE];
+        //        [[UIApplication sharedApplication] setStatusBarHidden:FALSE];
         [self.navigationController popViewControllerAnimated:YES];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"裁剪完成" message:@"已保存到手机相册" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alert show];
@@ -313,16 +350,16 @@ typedef NS_OPTIONS(NSUInteger, DebugModuleOption) {
 }
 
 - (void)backBtnClick:(UIViewController *)vc {
-//    [[UIApplication sharedApplication] setStatusBarHidden:FALSE];
+    //    [[UIApplication sharedApplication] setStatusBarHidden:FALSE];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - RecordViewControllerDelegate 
+#pragma mark - RecordViewControllerDelegate
 - (void)exitRecord {
     if (self.isPhotoToRecord) {
         self.isPhotoToRecord = NO;
     }
-//    [[UIApplication sharedApplication] setStatusBarHidden:FALSE];
+    //    [[UIApplication sharedApplication] setStatusBarHidden:FALSE];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -336,7 +373,7 @@ typedef NS_OPTIONS(NSUInteger, DebugModuleOption) {
                 return;
             }
             dispatch_async(dispatch_get_main_queue(), ^{
-//              [[UIApplication sharedApplication] setStatusBarHidden:FALSE];
+                //              [[UIApplication sharedApplication] setStatusBarHidden:FALSE];
                 [self.navigationController popViewControllerAnimated:YES];
             });
         }];
@@ -361,16 +398,16 @@ typedef NS_OPTIONS(NSUInteger, DebugModuleOption) {
     mediaConfig.videoOnly = NO;
     [compositionVC setValue:mediaConfig forKey:@"compositionConfig"];
     [self.navigationController pushViewController:compositionVC animated:YES];
-
+    
 }
 
 #pragma mark - AliyunVideoBaseDelegate
 -(void)videoBaseRecordVideoExit {
     NSLog(@"退出录制");
-//    [self.navigationController popViewControllerAnimated:YES];
-  if (self.delegate && [self.delegate respondsToSelector:@selector(recordResolved:)]) {
-    [self.delegate recordResolved: @""];
-  }
+    //    [self.navigationController popViewControllerAnimated:YES];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(recordResolved:)]) {
+        [self.delegate recordResolved: @""];
+    }
 }
 
 - (void)videoBase:(AliyunVideoBase *)base recordCompeleteWithRecordViewController:(UIViewController *)recordVC videoPath:(NSString *)videoPath {
@@ -378,29 +415,48 @@ typedef NS_OPTIONS(NSUInteger, DebugModuleOption) {
     ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
     [library writeVideoAtPathToSavedPhotosAlbum:[NSURL fileURLWithPath:videoPath]
                                 completionBlock:^(NSURL *assetURL, NSError *error) {
-
-                                  if (self.delegate && [self.delegate respondsToSelector:@selector(recordResolved:)]) {
-                                 
-                                    [self.delegate recordResolved: videoPath];
-                                  }
-//                                    dispatch_async(dispatch_get_main_queue(), ^{
-//                                        [recordVC.navigationController popViewControllerAnimated:YES];
-//                                    });
+                                    
+                                    if (self.delegate && [self.delegate respondsToSelector:@selector(recordResolved:)]) {
+                                        
+                                        [self.delegate recordResolved: videoPath];
+                                    }
+                                    //                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                    //                                        [recordVC.navigationController popViewControllerAnimated:YES];
+                                    //                                    });
                                 }];
 }
 
 - (AliyunVideoCropParam *)videoBaseRecordViewShowLibrary:(UIViewController *)recordVC {
     
     NSLog(@"录制页跳转Library");
+    AliyunVideoSize size = [[self.options objectForKey:@"size"] intValue];
+    AliyunVideoQuality videoQuality = [[self.options objectForKey:@"quality"] intValue];
+    int gop = [[self.options objectForKey:@"gop"] intValue];
+    CGFloat min = [[self.options objectForKey:@"min"] floatValue];
+    CGFloat max = [[self.options objectForKey:@"max"] floatValue];
+    AliyunVideoRatio ratio = AliyunVideoVideoRatio1To1;
+    switch ([[self.options objectForKey:@"ratio"] intValue])
+    {
+        case 1:
+        {
+            ratio = AliyunVideoVideoRatio3To4;
+        } break;
+        case 2:
+        {
+            ratio = AliyunVideoVideoRatio9To16;
+        } break;
+    }
+    
+    
     // 可以更新相册页配置
     AliyunVideoCropParam *mediaInfo = [[AliyunVideoCropParam alloc] init];
-    mediaInfo.minDuration = 2.0;
-    mediaInfo.maxDuration = 30;
+    mediaInfo.minDuration = min;
+    mediaInfo.maxDuration = max;
     mediaInfo.fps = 25;
-    mediaInfo.gop = 5;
-    mediaInfo.videoQuality = 1;
-    mediaInfo.size = AliyunVideoVideoSize360P;
-    mediaInfo.ratio = AliyunVideoVideoRatio1To1;
+    mediaInfo.gop = gop;
+    mediaInfo.videoQuality = videoQuality;
+    mediaInfo.size = size;
+    mediaInfo.ratio = ratio;
     mediaInfo.cutMode = AliyunVideoCutModeScaleAspectFill;
     mediaInfo.videoOnly = YES;
     mediaInfo.outputPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/cut_save.mp4"];
@@ -415,13 +471,13 @@ typedef NS_OPTIONS(NSUInteger, DebugModuleOption) {
     ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
     [library writeVideoAtPathToSavedPhotosAlbum:[NSURL fileURLWithPath:videoPath]
                                 completionBlock:^(NSURL *assetURL, NSError *error) {
-                                  dispatch_async(dispatch_get_main_queue(), ^{
-                                    [cropVC.navigationController popViewControllerAnimated:YES];
-                                    if (self.delegate && [self.delegate respondsToSelector:@selector(recordResolved:)]) {
-                                      
-                                      [self.delegate recordResolved: videoPath];
-                                    }
-                                  });
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                        [cropVC.navigationController popViewControllerAnimated:YES];
+                                        if (self.delegate && [self.delegate respondsToSelector:@selector(recordResolved:)]) {
+                                            
+                                            [self.delegate recordResolved: videoPath];
+                                        }
+                                    });
                                 }];
     
 }
@@ -438,5 +494,11 @@ typedef NS_OPTIONS(NSUInteger, DebugModuleOption) {
     [photoVC.navigationController popViewControllerAnimated:YES];
 }
 
+- (void) setConfiguration:(NSDictionary *)options {
+    self.options = [NSMutableDictionary dictionaryWithDictionary:self.defaultOptions];
+    for (NSString *key in options.keyEnumerator) {
+        [self.options setValue:options[key] forKey:key];
+    }
+}
 
 @end

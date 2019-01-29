@@ -1,0 +1,26 @@
+PODS:
+  - AliyunOSSiOS (2.10.4)
+  - AliyunPlayer_iOS/AliyunPlayerSDK (3.4.6)
+  - AliyunPlayer_iOS/AliyunVodPlayerSDK (3.4.6):
+    - AliyunPlayer_iOS/AliyunPlayerSDK
+  - VODUpload (1.4.0):
+    - AliyunOSSiOS
+
+DEPENDENCIES:
+  - AliyunPlayer_iOS/AliyunVodPlayerSDK
+  - VODUpload
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AliyunOSSiOS
+    - AliyunPlayer_iOS
+    - VODUpload
+
+SPEC CHECKSUMS:
+  AliyunOSSiOS: e5dcdba99963ca6b43fea863cead49423c5d4c75
+  AliyunPlayer_iOS: acdcfe8a282b962e4e87dff729cc772f3bda79b1
+  VODUpload: 2c10ed9aa156efaf48d81dfc78dd66fd1e13b971
+
+PODFILE CHECKSUM: 59928b087075686c7b26971fa0a48de2526e57bd
+
+COCOAPODS: 1.5.3

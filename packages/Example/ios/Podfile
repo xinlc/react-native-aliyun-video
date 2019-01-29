@@ -1,0 +1,7 @@
+platform :ios, '8.0'
+
+target 'ShortVideo' do
+  pod 'VODUpload'
+  pod 'AliyunPlayer_iOS/AliyunVodPlayerSDK'
+
+end

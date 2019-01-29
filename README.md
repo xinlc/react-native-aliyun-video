@@ -1,5 +1,7 @@
 # react-native-aliyun-video 
 
+## [短视频SDK需要 License](https://help.aliyun.com/documentdetail/53407.html#h2--6)
+
 [![npm package](https://img.shields.io/npm/v/react-native-aliyun-short-video.svg?style=flat-square)](https://www.npmjs.org/package/react-native-aliyun-short-video)
 [![npm downloads](https://img.shields.io/npm/dt/react-native-aliyun-short-video.svg)](https://www.npmjs.com/package/react-native-aliyun-short-video)
 

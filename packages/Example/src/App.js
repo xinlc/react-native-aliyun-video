@@ -21,7 +21,7 @@ export default class App extends Component<Props> {
 
   // 录制短视频
   onRecord = () => {
-    RNShortVideo.recordShortVideo()
+    RNShortVideo.recordShortVideo({ size: 2, ratio: 2, max: 20, quality: 2 })
       .then((path) => {
         this.setState({ path });
       })

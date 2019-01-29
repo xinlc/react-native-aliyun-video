@@ -68,17 +68,24 @@ public class RNShortVideoModule extends ReactContextBaseJavaModule {
      * 录制短视频
      */
     @ReactMethod
-    public void recordShortVideo(Promise promise) {
+    public void recordShortVideo(@Nullable ReadableMap options, Promise promise) {
         if (isPermissionOK()) {
             this.promise = promise;
-            int min = 2000;
-            int max = 30000;
-            int gop = 5;
+
+            int size = options.hasKey("size") ? options.getInt("size") : 1; // 0->360p，1:480p，2->540p，3->720p
+            int ratio = options.hasKey("ratio") ? options.getInt("ratio") : 0; // 0->1:1,1->3:4,2->9:16
+            int min = options.hasKey("min") ? options.getInt("min") * 1000 : 2000; // 2000
+            int max = options.hasKey("max") ? options.getInt("max") * 1000 : 20000; // 20000
+            int videoQuality = options.hasKey("quality") ? options.getInt("quality") : 3; // 0->SSD, 1->HD, 2->SD, 3->LD, 4->PD, 5->EPD
+            int gop = options.hasKey("gop") ? options.getInt("gop") : 5;    // 建议GOP值为5-30
+
+            VideoQuality quality = VideoQuality.values()[videoQuality];
+
             AliyunSnapVideoParam recordParam = new AliyunSnapVideoParam.Builder()
                     //设置录制分辨率，目前支持360p，480p，540p，720p
-                    .setResulutionMode(AliyunSnapVideoParam.RESOLUTION_480P)
+                    .setResulutionMode(size)  // AliyunSnapVideoParam.RESOLUTION_480P
                     //设置视频比例，目前支持1:1,3:4,9:16
-                    .setRatioMode(AliyunSnapVideoParam.RATIO_MODE_1_1)
+                    .setRatioMode(ratio)  // AliyunSnapVideoParam.RATIO_MODE_1_1
                     .setRecordMode(AliyunSnapVideoParam.RECORD_MODE_AUTO) //设置录制模式，目前支持按录，点录和混合模式
                     .setFilterList(eff_dirs) //设置滤镜地址列表,具体滤镜接口接收的是一个滤镜数组
                     .setBeautyLevel(80) //设置美颜度
@@ -88,7 +95,7 @@ public class RNShortVideoModule extends ReactContextBaseJavaModule {
                     .setNeedClip(true) //设置是否需要支持片段录制
                     .setMaxDuration(max) //设置最大录制时长 单位毫秒
                     .setMinDuration(min) //设置最小录制时长 单位毫秒
-                    .setVideQuality(VideoQuality.PD) //设置视频质量
+                    .setVideQuality(quality) //设置视频质量
                     .setGop(gop) //设置关键帧间隔
                     // .setVideoBitrate(2000) //设置视频码率，如果不设置则使用视频质量videoQulity参数计算出码率
                     .setSortMode(AliyunSnapVideoParam.SORT_MODE_VIDEO)//设置导入相册过滤选择视频

@@ -13,8 +13,8 @@
 #import <AliyunVideoSDK/AliyunVideoSDK.h>
 #import "AliyunRootViewController.h"
 
-//#import <VODUpload/VODUploadSVideoClient.h>
-//#import <VODUpload/VODUploadClient.h>
+#import <VODUpload/VODUploadSVideoClient.h>
+#import <VODUpload/VODUploadClient.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 
 #define RGBToColor(r, g, b)  [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
@@ -29,13 +29,18 @@ RCT_EXPORT_MODULE(RNShortVideo);
 @synthesize bridge = _bridge;
 
 
-RCT_REMAP_METHOD(recordShortVideo, recordShortVideo:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject){
+RCT_REMAP_METHOD(recordShortVideo, recordShortVideo:(NSDictionary *)options
+                 resolve:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject){
   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
     self.resolve = resolve;
     //    resolve(@"test");
 
-    UIViewController *recordViewController = [[AliyunRootViewController alloc] init];
+    AliyunRootViewController *recordViewController = [[AliyunRootViewController alloc] init];
     [recordViewController setValue:self forKey:@"delegate"];
+      
+    // set Configuration
+    [recordViewController setConfiguration:options];
     
     nav = [[UINavigationController alloc] initWithRootViewController:recordViewController];
     
@@ -57,51 +62,51 @@ RCT_REMAP_METHOD(recordShortVideo, recordShortVideo:(RCTPromiseResolveBlock)reso
 
 // upload vadio
 
-//RCT_EXPORT_METHOD(uploadVideo:(NSDictionary *)params
-//                  resolver:(RCTPromiseResolveBlock)resolve
-//                  rejecter:(RCTPromiseRejectBlock)reject)
-//{
-//  self.resolve = resolve;
-//  NSString *accessKeyId = [RCTConvert NSString:params[@"accessKeyId"]];
-//  NSString *accessKeySecret = [RCTConvert NSString:params[@"accessKeySecret"]];
-//  NSString *securityToken = [RCTConvert NSString:params[@"securityToken"]];
-//  NSString *expriedTime = [RCTConvert NSString:params[@"expriedTime"]];
-//  NSString *mp4Path = [RCTConvert NSString:params[@"mp4Path"]];
-//
-//  _client = [[VODUploadSVideoClient alloc] init];
-//  _client.delegate = self;
-//  _client.transcode = false;//是否转码，建议开启转码
-//
-//  // init video info
-//  VodSVideoInfo *svideoInfo = [VodSVideoInfo new];
-//  svideoInfo.title = [self currentTimeStr];
-////  [svideoInfo setTitle:@"test"];
-////  [svideoInfo setDesc:@"test"];
-////  [svideoInfo setTags:@"test"];
-////  [svideoInfo setCateId:0];
-//
-//  // get fisrt pic
-//  UIImage *img = [self getScreenShotImageFromVideoPath:mp4Path];
-//
-//  NSLog(@"img  width:%g height:%g", img.size.width, img.size.height);
-//
-//  // Create path.
-//  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//  NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Image.png"];
-//
-//  // Save image.
-//  [UIImagePNGRepresentation(img) writeToFile:filePath atomically:YES];
-////  ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-////  [library writeVideoAtPathToSavedPhotosAlbum:[NSURL fileURLWithPath:filePath] completionBlock:^(NSURL *assetURL, NSError *error) {
-////    // upload
-////    BOOL res = [client uploadWithVideoPath:mp4Path imagePath:filePath svideoInfo: svideoInfo accessKeyId:accessKeyId accessKeySecret:accessKeySecret accessToken:securityToken];
-////  }];
-//  NSLog(@"video Path  %@", mp4Path);
-//  NSLog(@"img Path  %@", filePath);
-//  // upload
-//  [_client uploadWithVideoPath:mp4Path imagePath:filePath svideoInfo: svideoInfo accessKeyId:accessKeyId accessKeySecret:accessKeySecret accessToken:securityToken];
-//
-//}
+RCT_EXPORT_METHOD(uploadVideo:(NSDictionary *)params
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
+{
+    self.resolve = resolve;
+    NSString *accessKeyId = [RCTConvert NSString:params[@"accessKeyId"]];
+    NSString *accessKeySecret = [RCTConvert NSString:params[@"accessKeySecret"]];
+    NSString *securityToken = [RCTConvert NSString:params[@"securityToken"]];
+    NSString *expriedTime = [RCTConvert NSString:params[@"expriedTime"]];
+    NSString *mp4Path = [RCTConvert NSString:params[@"mp4Path"]];
+    
+    _client = [[VODUploadSVideoClient alloc] init];
+    _client.delegate = self;
+    _client.transcode = false;//是否转码，建议开启转码
+    
+    // init video info
+    VodSVideoInfo *svideoInfo = [VodSVideoInfo new];
+    svideoInfo.title = [self currentTimeStr];
+    //  [svideoInfo setTitle:@"test"];
+    //  [svideoInfo setDesc:@"test"];
+    //  [svideoInfo setTags:@"test"];
+    //  [svideoInfo setCateId:0];
+    
+    // get fisrt pic
+    UIImage *img = [self getScreenShotImageFromVideoPath:mp4Path];
+    
+    NSLog(@"img  width:%g height:%g", img.size.width, img.size.height);
+    
+    // Create path.
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Image.png"];
+    
+    // Save image.
+    [UIImagePNGRepresentation(img) writeToFile:filePath atomically:YES];
+    //  ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    //  [library writeVideoAtPathToSavedPhotosAlbum:[NSURL fileURLWithPath:filePath] completionBlock:^(NSURL *assetURL, NSError *error) {
+    //    // upload
+    //    BOOL res = [client uploadWithVideoPath:mp4Path imagePath:filePath svideoInfo: svideoInfo accessKeyId:accessKeyId accessKeySecret:accessKeySecret accessToken:securityToken];
+    //  }];
+    NSLog(@"video Path  %@", mp4Path);
+    NSLog(@"img Path  %@", filePath);
+    // upload
+    [_client uploadWithVideoPath:mp4Path imagePath:filePath svideoInfo: svideoInfo accessKeyId:accessKeyId accessKeySecret:accessKeySecret accessToken:securityToken];
+    
+}
 
 
 

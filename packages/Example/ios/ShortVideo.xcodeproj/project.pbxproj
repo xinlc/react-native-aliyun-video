@@ -43,16 +43,11 @@
 		4193EABD20EE2B7C00CAFDA8 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4193EABC20EE2B7C00CAFDA8 /* libc++.tbd */; };
 		4193EABF20EE2B8300CAFDA8 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4193EABE20EE2B8300CAFDA8 /* libiconv.tbd */; };
 		4193EAC120EE2B8900CAFDA8 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4193EAC020EE2B8900CAFDA8 /* libresolv.tbd */; };
-		41B973B320EF0EF80062F323 /* AliyunPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973AB20EF0EF60062F323 /* AliyunPlayerSDK.framework */; };
-		41B973B420EF0EF80062F323 /* AliyunPlayerSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973AB20EF0EF60062F323 /* AliyunPlayerSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		41B973B520EF0EF80062F323 /* QuCore-ThirdParty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973AC20EF0EF70062F323 /* QuCore-ThirdParty.framework */; };
 		41B973B620EF0EF80062F323 /* QuCore-ThirdParty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973AC20EF0EF70062F323 /* QuCore-ThirdParty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		41B973B720EF0EF80062F323 /* AliyunVideoSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973AD20EF0EF70062F323 /* AliyunVideoSDK.framework */; };
 		41B973B820EF0EF80062F323 /* AliyunVideoSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973AD20EF0EF70062F323 /* AliyunVideoSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		41B973BB20EF0EF80062F323 /* AliyunVodPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973AF20EF0EF70062F323 /* AliyunVodPlayerSDK.framework */; };
-		41B973BC20EF0EF80062F323 /* AliyunVodPlayerSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973AF20EF0EF70062F323 /* AliyunVodPlayerSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		41B973BD20EF0EF80062F323 /* AliThirdparty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973B020EF0EF80062F323 /* AliThirdparty.framework */; };
-		41B973BE20EF0EF80062F323 /* AliThirdparty.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41B973B020EF0EF80062F323 /* AliThirdparty.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4B4D3753D614C93013124049 /* libPods-ShortVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F38F17360FA9B456DF2A39F4 /* libPods-ShortVideo.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
@@ -348,11 +343,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				41B973BE20EF0EF80062F323 /* AliThirdparty.framework in Embed Frameworks */,
 				41B973B820EF0EF80062F323 /* AliyunVideoSDK.framework in Embed Frameworks */,
 				41B973B620EF0EF80062F323 /* QuCore-ThirdParty.framework in Embed Frameworks */,
-				41B973B420EF0EF80062F323 /* AliyunPlayerSDK.framework in Embed Frameworks */,
-				41B973BC20EF0EF80062F323 /* AliyunVodPlayerSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,11 +389,14 @@
 		41B973B020EF0EF80062F323 /* AliThirdparty.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AliThirdparty.framework; path = ../../ShortVideo/ios/AliyunSDK/AliThirdparty.framework; sourceTree = "<group>"; };
 		41B973B120EF0EF80062F323 /* AliyunVideoCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AliyunVideoCore.framework; path = ../../ShortVideo/ios/AliyunSDK/AliyunVideoCore.framework; sourceTree = "<group>"; };
 		41B973B220EF0EF80062F323 /* AliyunLanguageSource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AliyunLanguageSource.bundle; path = ../../ShortVideo/ios/AliyunSDK/AliyunLanguageSource.bundle; sourceTree = "<group>"; };
+		4DC2B3F2651FB50FDAFA3F0E /* Pods-ShortVideo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortVideo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShortVideo/Pods-ShortVideo.debug.xcconfig"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		72FBE723007341F28CA1DA53 /* RNShortVideo.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = RNShortVideo.framework; path = System/Library/Frameworks/RNShortVideo.framework; sourceTree = SDKROOT; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		E030B68A82D4CCC4E8187F80 /* Pods-ShortVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortVideo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShortVideo/Pods-ShortVideo.release.xcconfig"; sourceTree = "<group>"; };
+		F38F17360FA9B456DF2A39F4 /* libPods-ShortVideo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShortVideo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -425,21 +420,19 @@
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				41B973B720EF0EF80062F323 /* AliyunVideoSDK.framework in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
-				41B973BB20EF0EF80062F323 /* AliyunVodPlayerSDK.framework in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
-				41B973BD20EF0EF80062F323 /* AliThirdparty.framework in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
-				41B973B320EF0EF80062F323 /* AliyunPlayerSDK.framework in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				41B973B520EF0EF80062F323 /* QuCore-ThirdParty.framework in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				4B4D3753D614C93013124049 /* libPods-ShortVideo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,6 +586,7 @@
 				4193EABC20EE2B7C00CAFDA8 /* libc++.tbd */,
 				4193EABA20EE2B6F00CAFDA8 /* libz.tbd */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
+				F38F17360FA9B456DF2A39F4 /* libPods-ShortVideo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -679,6 +673,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				4193E91620EE136300CAFDA8 /* Recovered References */,
+				B7045B3E0FB6FFDECD46A568 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -703,6 +698,15 @@
 				2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B7045B3E0FB6FFDECD46A568 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DC2B3F2651FB50FDAFA3F0E /* Pods-ShortVideo.debug.xcconfig */,
+				E030B68A82D4CCC4E8187F80 /* Pods-ShortVideo.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -730,11 +734,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ShortVideo" */;
 			buildPhases = (
+				252B16149C2AC4032CE0A7E2 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				4193E94D20EE142F00CAFDA8 /* Embed Frameworks */,
+				EC97FFCA2DC5CFE7FF825EE3 /* [CP] Embed Pods Frameworks */,
+				CC3396CAE6A2FE0B42F41163 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1204,6 +1211,24 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
+		252B16149C2AC4032CE0A7E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShortVideo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1217,6 +1242,46 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		CC3396CAE6A2FE0B42F41163 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ShortVideo/Pods-ShortVideo-resources.sh",
+				"${PODS_ROOT}/AliyunPlayer_iOS/AliyunLanguageSource.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AliyunLanguageSource.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShortVideo/Pods-ShortVideo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC97FFCA2DC5CFE7FF825EE3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ShortVideo/Pods-ShortVideo-frameworks.sh",
+				"${PODS_ROOT}/AliyunPlayer_iOS/AliyunPlayerSDK.framework",
+				"${PODS_ROOT}/AliyunPlayer_iOS/AliThirdparty.framework",
+				"${PODS_ROOT}/AliyunPlayer_iOS/AliyunVodPlayerSDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliyunPlayerSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliThirdparty.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliyunVodPlayerSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShortVideo/Pods-ShortVideo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1338,6 +1403,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DC2B3F2651FB50FDAFA3F0E /* Pods-ShortVideo.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = (
 					"$(ARCHS_STANDARD)",
@@ -1363,6 +1429,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.ShortVideo1;
 				PRODUCT_NAME = ShortVideo;
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1371,6 +1438,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E030B68A82D4CCC4E8187F80 /* Pods-ShortVideo.release.xcconfig */;
 			buildSettings = {
 				ARCHS = (
 					"$(ARCHS_STANDARD)",
@@ -1395,6 +1463,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.example.ShortVideo1;
 				PRODUCT_NAME = ShortVideo;
 				VALID_ARCHS = "armv7 arm64 armv7s";
 				VERSIONING_SYSTEM = "apple-generic";
